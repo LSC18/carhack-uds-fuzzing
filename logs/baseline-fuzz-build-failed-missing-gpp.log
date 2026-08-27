@@ -1,0 +1,20 @@
+WARNING: Repository '@@rules_python++python+python_3_11_aarch64-unknown-linux-gnu' will be fetched again since the file 'lib/python3.11/xmlrpc' has been modified externally. External modifications can lead to incorrect builds.
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+
+INFO: Analyzed target //fuzz:fuzz_server (1 packages loaded, 2303 targets configured).
+ERROR: /home/lsc18/.cache/bazel/_bazel_lsc18/c89df34a2045e043e6ceb84d80cdb1d6/external/abseil-cpp+/absl/base/BUILD.bazel:63:11: Compiling absl/base/log_severity.cc failed: (Exit 1): gcc failed: error executing CppCompile command (from cc_library rule target @@abseil-cpp+//absl/base:log_severity) /usr/bin/gcc -U_FORTIFY_SOURCE -fstack-protector -Wall -Wunused-but-set-parameter -Wno-free-nonheap-object -fno-omit-frame-pointer '-std=c++17' -MD -MF ... (remaining 33 arguments skipped)
+
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+gcc: fatal error: cannot execute 'cc1plus': execvp: No such file or directory
+compilation terminated.
+Target //fuzz:fuzz_server failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 2.109s, Critical Path: 0.08s
+INFO: 3 processes: 4 action cache hit, 3 internal.
+ERROR: Build did NOT complete successfully

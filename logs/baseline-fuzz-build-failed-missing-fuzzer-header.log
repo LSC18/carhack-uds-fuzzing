@@ -1,0 +1,33 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+
+INFO: Analyzed target //fuzz:fuzz_server (0 packages loaded, 0 targets configured).
+[20 / 110] Compiling absl/base/internal/throw_delegate.cc; 0s processwrapper-sandbox ... (2 actions, 1 running)
+[36 / 122] Compiling absl/base/internal/spinlock.cc; 0s processwrapper-sandbox ... (2 actions, 1 running)
+[60 / 132] Compiling absl/synchronization/internal/stdcpp_waiter.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+[75 / 151] Compiling absl/strings/str_split.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+[90 / 162] Compiling absl/time/internal/cctz/src/time_zone_format.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+[104 / 168] Compiling absl/strings/internal/cordz_handle.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+[123 / 175] Compiling absl/strings/internal/str_format/parser.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+INFO: From Executing genrule //src:amalgamated:
+amalgamated source files written to bazel-out/aarch64-fastbuild-ST-3af96252611b/bin/src/iso14229.c and bazel-out/aarch64-fastbuild-ST-3af96252611b/bin/src/iso14229.h
+[141 / 175] Compiling absl/strings/internal/str_format/extension.cc; 0s processwrapper-sandbox ... (4 actions, 3 running)
+[145 / 175] Action fuzz/fuzz_server_corpus; 1s processwrapper-sandbox ... (4 actions, 3 running)
+[150 / 175] Action fuzz/fuzz_server_corpus; 2s processwrapper-sandbox ... (4 actions, 3 running)
+[155 / 175] Action fuzz/fuzz_server_corpus; 3s processwrapper-sandbox ... (4 actions running)
+[160 / 175] Action fuzz/fuzz_server_corpus; 4s processwrapper-sandbox ... (4 actions running)
+ERROR: /home/lsc18/carhack-targets/iso14229/fuzz/BUILD.bazel:3:13: Compiling fuzz/fuzz_server.cc failed: (Exit 1): gcc failed: error executing CppCompile command (from cc_binary rule target //fuzz:fuzz_server_raw_) /usr/bin/gcc -U_FORTIFY_SOURCE -fstack-protector -Wall -Wunused-but-set-parameter -Wno-free-nonheap-object -fno-omit-frame-pointer '-std=c++17' -MD -MF ... (remaining 38 arguments skipped)
+
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+fuzz/fuzz_server.cc:8:10: fatal error: fuzzer/FuzzedDataProvider.h: No such file or directory
+    8 | #include <fuzzer/FuzzedDataProvider.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+Target //fuzz:fuzz_server failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 14.089s, Critical Path: 5.30s
+INFO: 156 processes: 14 action cache hit, 7 internal, 149 processwrapper-sandbox.
+ERROR: Build did NOT complete successfully
