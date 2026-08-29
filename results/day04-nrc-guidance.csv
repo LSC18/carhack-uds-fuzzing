@@ -1,0 +1,64 @@
+nrc,count,classification,name,action,reason
+0x10,35815,DEFINED,GeneralReject,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x13,6337,DEFINED,IncorrectMessageLengthOrInvalidFormat,REPAIR_LENGTH,메시지 길이와 형식을 우선 보정한다.
+0x31,2309,DEFINED,RequestOutOfRange,MUTATE_PARAMETER,요청 데이터의 식별자 또는 파라미터 범위를 변경한다.
+0x70,1623,DEFINED,UploadDownloadNotAccepted,CHANGE_TRANSFER_PRECONDITION,Upload 또는 Download 요청의 세션과 선행 조건을 변경한다.
+0x12,828,DEFINED,SubFunctionNotSupported,MUTATE_SUBFUNCTION,현재 Service의 SubFunction 값을 변경한다.
+0x22,367,DEFINED,ConditionsNotCorrect,CHANGE_STATE,현재 상태에서 조건이 충족되지 않아 세션 또는 선행 상태를 변경한다.
+0x37,199,DEFINED,RequiredTimeDelayNotExpired,WAIT_AND_RETRY,필요한 지연 시간이 지나지 않았으므로 대기 후 재시도한다.
+0x58,132,DEFINED,OwnershipVerificationFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x87,108,DEFINED,TemperatureTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x8D,94,DEFINED,TransmissionRangeNotInGear,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x21,93,DEFINED,BusyRepeatRequest,RETRY_WITH_DELAY,서버가 처리 중일 수 있으므로 지연 후 재시도한다.
+0x8F,88,DEFINED,BrakeSwitchNotClosed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x82,73,DEFINED,RpmTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x11,66,DEFINED,ServiceNotSupported,CHANGE_SERVICE,지원되지 않는 Service이므로 다른 SID를 선택한다.
+0x36,58,DEFINED,ExceedNumberOfAttempts,RESET_SECURITY_SEQUENCE,시도 횟수 초과 상태이므로 테스트 상태를 초기화한다.
+0x33,56,DEFINED,SecurityAccessDenied,CHANGE_SESSION_PATH,Security Access가 거부되어 진단 세션과 선행 절차를 확인한다.
+0x90,56,DEFINED,ShifterLeverNotInPark,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x85,49,DEFINED,EngineRunTimeTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x7F,47,DEFINED,ServiceNotSupportedInActiveSession,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x38,36,DEFINED,SecureDataTransmissionRequired,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x56,35,DEFINED,CertficateVerificationFailedInvalidScope,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x35,34,DEFINED,InvalidKey,MUTATE_SECURITY_INPUT,현재 Security Access 입력을 변형하되 허가된 Mock 환경에서만 검증한다.
+0x53,33,DEFINED,CertficateVerificationFailedInvalidType,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x34,32,DEFINED,AuthenticationRequired,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x14,31,DEFINED,ResponseTooLong,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x26,30,DEFINED,FailurePreventsExecutionOfRequestedAction,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x88,30,DEFINED,VehicleSpeedTooHigh,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x7E,29,DEFINED,SubFunctionNotSupportedInActiveSession,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x39,27,DEFINED,SecureDataTransmissionNotAllowed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x94,27,DEFINED,ResourceTemporarilyNotAvailable,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x5D,26,DEFINED,DeAuthenticationFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x71,22,DEFINED,TransferDataSuspended,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x59,17,DEFINED,ChallengeCalculationFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x8C,17,DEFINED,TransmissionRangeNotInNeutral,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x81,16,DEFINED,RpmTooHigh,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x86,15,DEFINED,TemperatureTooHigh,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x51,15,DEFINED,CertficateVerificationFailedInvalidSignature,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x52,14,DEFINED,CertficateVerificationFailedInvalidChainOfTrust,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x5A,13,DEFINED,SettingAccessRightsFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x84,9,DEFINED,EngineIsNotRunning,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x8A,9,DEFINED,ThrottlePedalTooHigh,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x3A,8,DEFINED,SecureDataVerificationFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x72,8,DEFINED,GeneralProgrammingFailure,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x24,8,DEFINED,RequestSequenceError,BUILD_SEQUENCE,요청 순서가 맞지 않아 선행 요청을 포함한 시퀀스를 구성한다.
+0x93,7,DEFINED,VoltageTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x78,6,DEFINED,RequestCorrectlyReceived_ResponsePending,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x50,5,DEFINED,CertficateVerificationFailedInvalidTimePeriod,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x55,4,DEFINED,CertficateVerificationFailedInvalidContent,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x25,4,DEFINED,NoResponseFromSubnetComponent,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x83,3,DEFINED,EngineIsRunning,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x89,3,DEFINED,VehicleSpeedTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x5B,3,DEFINED,SessionKeyCreationOrDerivationFailed,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0xFF,2,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x57,2,DEFINED,CertficateVerificationFailedInvalidCertificate,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x8B,2,DEFINED,ThrottlePedalTooLow,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x29,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x19,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x04,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x54,1,DEFINED,CertficateVerificationFailedInvalidFormat,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0xD0,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x91,1,DEFINED,TorqueConverterClutchLocked,KEEP_MUTATING,정의된 NRC이지만 별도 규칙이 없어 기존 변형을 계속한다.
+0x01,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.
+0x30,1,UNKNOWN,,LOG_AND_EXPLORE,구현체에 정의되지 않은 값이므로 별도 기록 후 재현 여부를 확인한다.

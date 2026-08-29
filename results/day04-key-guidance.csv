@@ -1,0 +1,12 @@
+0x13,6337,DEFINED,IncorrectMessageLengthOrInvalidFormat,REPAIR_LENGTH,메시지 길이와 형식을 우선 보정한다.
+0x31,2309,DEFINED,RequestOutOfRange,MUTATE_PARAMETER,요청 데이터의 식별자 또는 파라미터 범위를 변경한다.
+0x70,1623,DEFINED,UploadDownloadNotAccepted,CHANGE_TRANSFER_PRECONDITION,Upload 또는 Download 요청의 세션과 선행 조건을 변경한다.
+0x12,828,DEFINED,SubFunctionNotSupported,MUTATE_SUBFUNCTION,현재 Service의 SubFunction 값을 변경한다.
+0x22,367,DEFINED,ConditionsNotCorrect,CHANGE_STATE,현재 상태에서 조건이 충족되지 않아 세션 또는 선행 상태를 변경한다.
+0x37,199,DEFINED,RequiredTimeDelayNotExpired,WAIT_AND_RETRY,필요한 지연 시간이 지나지 않았으므로 대기 후 재시도한다.
+0x21,93,DEFINED,BusyRepeatRequest,RETRY_WITH_DELAY,서버가 처리 중일 수 있으므로 지연 후 재시도한다.
+0x11,66,DEFINED,ServiceNotSupported,CHANGE_SERVICE,지원되지 않는 Service이므로 다른 SID를 선택한다.
+0x36,58,DEFINED,ExceedNumberOfAttempts,RESET_SECURITY_SEQUENCE,시도 횟수 초과 상태이므로 테스트 상태를 초기화한다.
+0x33,56,DEFINED,SecurityAccessDenied,CHANGE_SESSION_PATH,Security Access가 거부되어 진단 세션과 선행 절차를 확인한다.
+0x35,34,DEFINED,InvalidKey,MUTATE_SECURITY_INPUT,현재 Security Access 입력을 변형하되 허가된 Mock 환경에서만 검증한다.
+0x24,8,DEFINED,RequestSequenceError,BUILD_SEQUENCE,요청 순서가 맞지 않아 선행 요청을 포함한 시퀀스를 구성한다.

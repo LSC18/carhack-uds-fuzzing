@@ -1,0 +1,4 @@
+input=results/day03-nrc-classification.csv
+output=results/day04-nrc-guidance.csv
+observed_nrc_types=63
+guided_types=19
