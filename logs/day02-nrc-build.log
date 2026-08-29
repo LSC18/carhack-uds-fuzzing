@@ -1,0 +1,22 @@
+Starting local Bazel server (9.2.0) and connecting to it...
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //fuzz:fuzz_server (1 packages loaded)
+Analyzing: target //fuzz:fuzz_server (5 packages loaded, 6 targets configured)
+Analyzing: target //fuzz:fuzz_server (5 packages loaded, 6 targets configured)
+
+Analyzing: target //fuzz:fuzz_server (110 packages loaded, 895 targets configured)
+
+Analyzing: target //fuzz:fuzz_server (131 packages loaded, 34986 targets configured)
+
+INFO: Analyzed target //fuzz:fuzz_server (139 packages loaded, 40750 targets configured).
+[97 / 216] checking cached actions
+[210 / 217] [Scann] Compiling fuzz/fuzz_server.cc
+[215 / 217] checking cached actions
+INFO: Found 1 target...
+Target //fuzz:fuzz_server up-to-date:
+  bazel-bin/fuzz/fuzz_server
+INFO: Elapsed time: 11.076s, Critical Path: 1.92s
+INFO: 5 processes: 212 action cache hit, 3 internal, 2 processwrapper-sandbox.
+INFO: Build completed successfully, 5 total actions

@@ -1,0 +1,23 @@
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+Analyzing: target //fuzz:fuzz_server (0 packages loaded, 0 targets configured)
+
+INFO: Analyzed target //fuzz:fuzz_server (0 packages loaded, 5 targets configured).
+[217 / 218] [Prepa] Testing //fuzz:fuzz_server
+[217 / 218] Testing //fuzz:fuzz_server; 1s processwrapper-sandbox
+[217 / 218] Testing //fuzz:fuzz_server; 10s processwrapper-sandbox
+[217 / 218] Testing //fuzz:fuzz_server; 23s processwrapper-sandbox
+[217 / 218] Testing //fuzz:fuzz_server; 24s processwrapper-sandbox
+INFO: From Testing //fuzz:fuzz_server:
+stdout (/home/lsc18/.cache/bazel/_bazel_lsc18/c89df34a2045e043e6ceb84d80cdb1d6/execroot/_main/bazel-out/_tmp/actions/stdout-2) 5883556 exceeds maximum size of --experimental_ui_max_stdouterr_bytes=1048576 bytes; skipping
+INFO: Found 1 test target...
+Target //fuzz:fuzz_server up-to-date:
+  bazel-bin/fuzz/fuzz_server
+INFO: Elapsed time: 26.964s, Critical Path: 25.86s
+INFO: 2 processes: 7 action cache hit, 1 internal, 2 processwrapper-sandbox.
+INFO: Build completed successfully, 2 total actions
+//fuzz:fuzz_server                                                       PASSED in 22.2s
+
+Executed 1 out of 1 test: 1 test passes.

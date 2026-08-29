@@ -1,0 +1,23 @@
+diff --git a/fuzz/fuzz_server.cc b/fuzz/fuzz_server.cc
+index 81b775d9..d2521164 100644
+--- a/fuzz/fuzz_server.cc
++++ b/fuzz/fuzz_server.cc
+@@ -168,11 +168,15 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
+             for (size_t time_us = 0; time_us < wait_ms * 1000; time_us += poll_rate_us) {
+                 g_time_now_us += poll_rate_us;
+                 UDSServerPoll(&srv);
+-                ssize_t ret = UDSTpRecv(mock_client, client_recv_buf, sizeof(client_recv_buf), NULL);
+-                (void)ret;
++                ssize_t ret =
++                    UDSTpRecv(mock_client, client_recv_buf, sizeof(client_recv_buf), NULL);
++
++                if (ret >= 3 && client_recv_buf[0] == 0x7F) {
++                    fprintf(stderr, "[NRC] request_sid=0x%02X nrc=0x%02X len=%zd\n",
++                            client_recv_buf[1], client_recv_buf[2], ret);
++                }
+             }
+         }
+-
+     }
+     ISOTPMockFree(mock_client);
+     ISOTPMockFree(srv.tp);
