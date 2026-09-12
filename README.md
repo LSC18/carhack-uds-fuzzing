@@ -2,7 +2,7 @@
 
 자동차 진단 프로토콜인 UDS와 Fuzzing을 학습하고, 최종적으로 NRC 피드백 기반 상태 인식형 UDS Fuzzing PoC를 구현하기 위한 개인 학습·실습 저장소다.
 
-현재는 완성된 Fuzzing 도구를 개발한 단계가 아니다. `1 Day 1 Doc` 방식으로 공개 UDS 구현체를 분석하고, 기존 Fuzz Harness를 직접 실행·수정하면서 PoC에 필요한 기술을 단계적으로 확보하고 있다.
+현재는 공개 UDS 구현체의 기존 Fuzz Harness 재현, NRC 수집·분류, NRC별 입력 전략 생성에 이어 NRC `0x13`을 실제 요청 수정과 재전송에 연결한 transport-independent 최소 PoC까지 구현했다. 실제 SocketCAN/vCAN·ISO-TP 전송 계층 연결은 다음 단계다.
 
 ## 최종 목표
 
@@ -74,25 +74,61 @@ UDS 입력 생성
 - 반복 실행을 위한 `run-baseline.sh` 작성
 - 실행 결과와 상세 로그 보존
 - Daily Doc 작성
+- NRC `0x13` 파싱 및 `REPAIR_LENGTH` 규칙을 실제 요청에 적용
+- 잘못된 `10` 요청을 `10 01`로 수정해 Positive Response `50 01` 확인
+- 수정 전후 요청·응답 JSONL 로그와 자동 테스트 5개 작성
 
-현재 결과는 NRC 기반 Fuzzing의 완성이 아니라, 이후 코드를 수정하고 비교 실험을 진행하기 위한 기준선이다.
+현재 결과는 NRC 피드백 루프의 최소 구현이다. 아직 실제 CAN·ISO-TP 전송과 다중 NRC·상태 전이·비교 실험은 포함하지 않는다.
+
+## NRC 0x13 자동 수정 최소 PoC
+
+외부 패키지 없이 Python 3.10 이상에서 실행한다.
+
+```bash
+python3 run_poc.py
+```
+
+실제 확인된 출력:
+
+```text
+[TX] 10
+[RX] 7F 10 13
+[NRC] 0x13 Incorrect Message Length Or Invalid Format
+[REPAIR] 10 -> 10 01
+[TX] 10 01
+[RX] 50 01
+[RESULT] NRC-guided repair succeeded
+[LOG] logs/poc_trace.jsonl
+```
+
+자동 테스트:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+테스트 5개가 모두 `OK`로 종료되고 기본 PoC가 exit code 0을 반환하면 성공이다. 현재 Virtual ECU 호출은 프로세스 내부에서 수행되며 실제 차량, 외부 ECU 또는 CAN 네트워크와 통신하지 않는다.
 
 ## 다음 작업
 
-다음 단계에서는 기존 Harness의 응답 수신 부분을 기준으로 다음 내용을 진행한다.
+다음 단계에서는 현재 Parser와 Repair Engine을 기존 Harness 또는 vCAN/ISO-TP 전송 계층에 연결한다.
 
-1. UDS Positive Response와 Negative Response 구분
-2. `0x7F | Request SID | NRC` 구조 확인
-3. NRC별 발생 횟수 기록
-4. NRC와 입력값을 함께 저장하는 Logger 작성
-5. NRC에 따라 다음 입력을 변경하는 규칙 설계
-6. 기존 Fuzzing 결과와 비교
+1. 전송 부분을 별도 Transport 인터페이스로 분리
+2. Linux SocketCAN/vCAN 및 ISO-TP Adapter 구현
+3. 실제 Virtual ECU에서 `10 → 7F 10 13` 요청·응답 확보
+4. 자동 수정된 `10 01 → 50 01` 재전송 확인
+5. NRC `0x12`·`0x31` Repair Rule 추가
+6. Random 방식과 NRC-guided 방식 비교
 
 ## 저장소 구성
 
 ```text
 carhack-uds-fuzzing/
 ├── README.md
+├── run_poc.py           # NRC 0x13 최소 PoC 실행기
+├── ecu/                 # 격리형 Virtual ECU
+├── fuzzer/              # NRC Parser, Repair Engine, 피드백 루프
+├── tests/               # 단위·통합 테스트
 ├── docs/
 │   └── daily-docs/       # 1 Day 1 Doc 학습·실습 기록
 ├── logs/                 # 성공·실패 및 실행 로그
