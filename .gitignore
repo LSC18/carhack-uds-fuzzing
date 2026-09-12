@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local PoC output; keep only the reviewed sample trace
+logs/poc_trace.jsonl
+
+# Secrets and local connection material
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*wireguard*
+*WireGuard*
+*credential*
+*secret*
+.DS_Store

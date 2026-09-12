@@ -1,0 +1,7 @@
+{"timestamp": "2026-09-13T00:02:49.308+09:00", "event": "tx", "attempt": 1, "request": "10"}
+{"timestamp": "2026-09-13T00:02:49.308+09:00", "event": "rx", "attempt": 1, "response": "7F 10 13"}
+{"timestamp": "2026-09-13T00:02:49.309+09:00", "event": "nrc", "attempt": 1, "request_sid": "0x10", "nrc": "0x13", "meaning": "Incorrect Message Length Or Invalid Format"}
+{"timestamp": "2026-09-13T00:02:49.309+09:00", "event": "repair", "attempt": 1, "nrc": "0x13", "before": "10", "after": "10 01"}
+{"timestamp": "2026-09-13T00:02:49.310+09:00", "event": "tx", "attempt": 2, "request": "10 01"}
+{"timestamp": "2026-09-13T00:02:49.310+09:00", "event": "rx", "attempt": 2, "response": "50 01"}
+{"timestamp": "2026-09-13T00:02:49.311+09:00", "event": "result", "success": true, "attempts": 2, "repairs": 1, "message": "NRC-guided repair succeeded"}
